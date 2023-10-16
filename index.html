@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object returned from function</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            function can return objects
+        */
+        function createUser(name, email, city) {
+            if (name.length < 3) return null;
+            if (email.length < 3) return null;
+            if (email.indexOf("@") < 0) return null;
+            if (city.length < 3) return null;
+
+            let obj = {
+                name: name,
+                email: email,
+                city: city,
+                type: "employee"
+            }
+
+            return obj;
+        }
+
+        let user1 = createUser("Alex", "alex@hotmail.com", "New York");
+        console.log(user1);
+
+        let user2 = createUser("Ben", "ben@hotmail.com", "London");
+        console.log(user2);
+
+        let user3 = createUser("Cy", "cynthia@hotmail.com", "Stockholm");
+        console.log(user3);
+    </script>
+</body>
+</html>
